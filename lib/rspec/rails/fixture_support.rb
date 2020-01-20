@@ -10,6 +10,10 @@ module RSpec
         include ActiveRecord::TestFixtures
 
         included do
+          setup if RSpec.configuration.use_active_record?
+        end
+
+        def self.setup
           self.fixture_path = RSpec.configuration.fixture_path
           if ::Rails::VERSION::STRING > '5'
             self.use_transactional_tests = RSpec.configuration.use_transactional_fixtures

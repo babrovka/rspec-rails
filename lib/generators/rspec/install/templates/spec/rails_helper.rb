@@ -42,6 +42,13 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
+  # You can uncomment this line to turn off active_record support entirely.
+  # config.use_active_record = false
+
+<% else -%>
+  # Remove this line to enable support for active_record
+  config.use_active_record = false
+
 <% end -%>
   # RSpec Rails can automatically mix in different behaviours to your tests
   # based on their file location, for example enabling you to call `get` and
